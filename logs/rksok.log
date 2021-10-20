@@ -1,0 +1,436 @@
+2021-10-19T15:35:54.305134+0200 INFO Serving on ('127.0.0.1', 8000)
+2021-10-19T15:40:51.535010+0200 INFO Serving on ('127.0.0.1', 8000)
+2021-10-19T15:41:57.009950+0200 INFO Received: 'ЗОПИШИ ihor РКСОК/1.0\r\n111111\r\n\r\n'
+2021-10-19T15:41:57.387083+0200 INFO Sent: 'НОРМАЛДЫКС РКСОК/1.0'
+2021-10-19T15:41:57.814367+0200 INFO Received: 'ЗОПИШИ iiihor РКСОК/1.0\r\n00000\r\n\r\n'
+2021-10-19T15:41:57.878579+0200 INFO Sent: 'НОРМАЛДЫКС РКСОК/1.0'
+2021-10-20T15:23:16.648855+0200 INFO Serving on ('127.0.0.1', 8000)
+2021-10-20T15:23:35.124769+0200 INFO Received: 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+2021-10-20T15:23:35.133134+0200 ERROR An error has been caught in function 'my_server', process 'MainProcess' (18751), thread 'MainThread' (139679017801536):
+Traceback (most recent call last):
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 54, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x7f098a4ebca0>
+    │       └ <function run at 0x7f098e235a60>
+    └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x7f098b1d2d40>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7f098b2ea3a0>
+           └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 629, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f098b2ea310>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 596, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f098b2ebe50>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 1890, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f098b9dce50>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f098c4a75b0>(<Future finished result=None>)>
+  File "/usr/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f098c4a75b0>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f098c4a75b0>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f098c4a75b0>(<Future finished result=None>)>
+
+> File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 25, in my_server
+    response = formation_response(received_data)   #  "НИПОНЯЛ РКСОК/1.0"
+               │                  └ 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+               └ <function formation_response at 0x7f098a4eb670>
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/create_response.py", line 90, in formation_response
+    if asyncio.create_task(AMOZNO(inf_clint).split(" ")[0]) == "МОЖНА":
+       │       │           │      └ ['ОТДОВАЙ', 'ihor', 'РКСОК/1.0\r\n\r\n']
+       │       │           └ <function AMOZNO at 0x7f098a4bf550>
+       │       └ <function create_task at 0x7f098b352940>
+       └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+AttributeError: 'coroutine' object has no attribute 'split'
+2021-10-20T15:23:35.157962+0200 ERROR An error has been caught in function '_run', process 'MainProcess' (18751), thread 'MainThread' (139679017801536):
+Traceback (most recent call last):
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 54, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x7f098a4ebca0>
+    │       └ <function run at 0x7f098e235a60>
+    └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x7f098b1d2d40>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7f098b2ea3a0>
+           └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 629, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f098b2ea310>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 596, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f098b2ebe50>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 1890, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f098b9dce50>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f098c4a75b0>(<Future finished result=None>)>
+> File "/usr/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f098c4a75b0>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f098c4a75b0>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f098c4a75b0>(<Future finished result=None>)>
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 28, in my_server
+    writer.write(response.encode("utf-8")) #.encode("utf-8")
+    │      │     └ None
+    │      └ <function StreamWriter.write at 0x7f098b2f7e50>
+    └ <StreamWriter transport=<_SelectorSocketTransport fd=8 read=polling write=<idle, bufsize=0>> reader=<StreamReader transport=<...
+
+AttributeError: 'NoneType' object has no attribute 'encode'
+2021-10-20T15:40:53.448148+0200 INFO Serving on ('127.0.0.1', 8000)
+2021-10-20T15:41:00.333030+0200 INFO Received: 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+2021-10-20T15:41:01.172080+0200 INFO Sent: 'НОРМАЛДЫКС РКСОК/1.0\n111111\r\n\r\n'
+2021-10-20T16:20:30.645938+0200 INFO Serving on ('127.0.0.1', 8000)
+2021-10-20T16:20:40.248244+0200 INFO Received: 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+2021-10-20T16:20:40.248722+0200 ERROR An error has been caught in function '_run', process 'MainProcess' (21396), thread 'MainThread' (140528445503296):
+Traceback (most recent call last):
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 54, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x7fcf5024ddc0>
+    │       └ <function run at 0x7fcf53f97af0>
+    └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x7fcf50f34cc0>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7fcf5104c430>
+           └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 629, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7fcf5104c3a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 596, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7fcf5104dee0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 1890, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7fcf5173eee0>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fcf52208640>(<Future finished result=None>)>
+> File "/usr/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7fcf52208640>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7fcf52208640>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fcf52208640>(<Future finished result=None>)>
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 25, in my_server
+    response = await asyncio.run(formation_response(received_data))   #  "НИПОНЯЛ РКСОК/1.0"
+                     │       │   │                  └ 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+                     │       │   └ <function formation_response at 0x7fcf5024d790>
+                     │       └ <function run at 0x7fcf53f97af0>
+                     └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 33, in run
+    raise RuntimeError(
+
+RuntimeError: asyncio.run() cannot be called from a running event loop
+2021-10-20T16:21:33.837034+0200 INFO Serving on ('127.0.0.1', 8000)
+2021-10-20T16:21:41.466572+0200 INFO Received: 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+2021-10-20T16:21:41.467063+0200 ERROR An error has been caught in function '_run', process 'MainProcess' (21569), thread 'MainThread' (140103323244352):
+Traceback (most recent call last):
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 54, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x7f6c54e1ddc0>
+    │       └ <function run at 0x7f6c58b69af0>
+    └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x7f6c55b06f40>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7f6c55c1e430>
+           └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 629, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f6c55c1e3a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 596, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f6c55c1fee0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 1890, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f6c56315ee0>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f6c56dda550>(<Future finished result=None>)>
+> File "/usr/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f6c56dda550>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f6c56dda550>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f6c56dda550>(<Future finished result=None>)>
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 25, in my_server
+    response = asyncio.run(formation_response(received_data))   #  "НИПОНЯЛ РКСОК/1.0"
+               │       │   │                  └ 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+               │       │   └ <function formation_response at 0x7f6c54e1d820>
+               │       └ <function run at 0x7f6c58b69af0>
+               └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 33, in run
+    raise RuntimeError(
+
+RuntimeError: asyncio.run() cannot be called from a running event loop
+2021-10-20T16:22:28.959791+0200 INFO Serving on ('127.0.0.1', 8000)
+2021-10-20T16:22:36.395891+0200 INFO Received: 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+2021-10-20T16:22:36.396406+0200 ERROR An error has been caught in function '_run', process 'MainProcess' (21730), thread 'MainThread' (140337927255872):
+Traceback (most recent call last):
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 54, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x7fa2f45eee50>
+    │       └ <function run at 0x7fa2f833baf0>
+    └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x7fa2f52d8f40>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7fa2f53f0430>
+           └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 629, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7fa2f53f03a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 596, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7fa2f53f1ee0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 1890, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7fa2f5ae2ee0>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fa2f65ac610>(<Future finished result=None>)>
+> File "/usr/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7fa2f65ac610>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7fa2f65ac610>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7fa2f65ac610>(<Future finished result=None>)>
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 25, in my_server
+    response = asyncio.run(formation_response(received_data))   #  "НИПОНЯЛ РКСОК/1.0"
+               │       │   │                  └ 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+               │       │   └ <function formation_response at 0x7fa2f45ee820>
+               │       └ <function run at 0x7fa2f833baf0>
+               └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 33, in run
+    raise RuntimeError(
+
+RuntimeError: asyncio.run() cannot be called from a running event loop
+2021-10-20T16:23:57.020215+0200 INFO Serving on ('127.0.0.1', 8000)
+2021-10-20T16:24:06.131517+0200 INFO Received: 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+2021-10-20T16:24:06.134077+0200 ERROR An error has been caught in function 'my_server', process 'MainProcess' (22028), thread 'MainThread' (140682984372032):
+Traceback (most recent call last):
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 54, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x7ff34b60bdc0>
+    │       └ <function run at 0x7ff34f357a60>
+    └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x7ff34c2f4bc0>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7ff34c40c3a0>
+           └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 629, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7ff34c40c310>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 596, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7ff34c40de50>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 1890, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7ff34cb03e50>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7ff34d5ca5b0>(<Future finished result=None>)>
+  File "/usr/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7ff34d5ca5b0>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7ff34d5ca5b0>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7ff34d5ca5b0>(<Future finished result=None>)>
+
+> File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 25, in my_server
+    response = formation_response(received_data)   #  "НИПОНЯЛ РКСОК/1.0"
+               │                  └ 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+               └ <function formation_response at 0x7ff34b60b790>
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/create_response.py", line 90, in formation_response
+    if asyncio.run(AMOZNO(inf_clint).split(" ")[0]) == "МОЖНА":
+       │       │   │      └ ['ОТДОВАЙ', 'ihor', 'РКСОК/1.0\r\n\r\n']
+       │       │   └ <function AMOZNO at 0x7ff34b5e1550>
+       │       └ <function run at 0x7ff34f357a60>
+       └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+AttributeError: 'coroutine' object has no attribute 'split'
+2021-10-20T16:24:06.156911+0200 ERROR An error has been caught in function '_run', process 'MainProcess' (22028), thread 'MainThread' (140682984372032):
+Traceback (most recent call last):
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 54, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x7ff34b60bdc0>
+    │       └ <function run at 0x7ff34f357a60>
+    └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x7ff34c2f4bc0>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7ff34c40c3a0>
+           └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 629, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7ff34c40c310>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 596, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7ff34c40de50>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 1890, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7ff34cb03e50>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7ff34d5ca5b0>(<Future finished result=None>)>
+> File "/usr/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7ff34d5ca5b0>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7ff34d5ca5b0>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7ff34d5ca5b0>(<Future finished result=None>)>
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 28, in my_server
+    writer.write(response.encode("utf-8")) #.encode("utf-8")
+    │      │     └ None
+    │      └ <function StreamWriter.write at 0x7ff34c419e50>
+    └ <StreamWriter transport=<_SelectorSocketTransport fd=8 read=polling write=<idle, bufsize=0>> reader=<StreamReader transport=<...
+
+AttributeError: 'NoneType' object has no attribute 'encode'
+2021-10-20T16:26:14.169318+0200 INFO Serving on ('127.0.0.1', 8000)
+2021-10-20T16:26:21.851043+0200 INFO Received: 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+2021-10-20T16:26:21.851561+0200 ERROR An error has been caught in function '_run', process 'MainProcess' (22350), thread 'MainThread' (139679738623808):
+Traceback (most recent call last):
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 54, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x7f09b5457e50>
+    │       └ <function run at 0x7f09b91a3af0>
+    └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x7f09b6140f40>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7f09b6258430>
+           └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 629, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f09b62583a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 596, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f09b6259ee0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 1890, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f09b694fee0>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f09b7414610>(<Future finished result=None>)>
+> File "/usr/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f09b7414610>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f09b7414610>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f09b7414610>(<Future finished result=None>)>
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 25, in my_server
+    response = asyncio.run(formation_response(received_data))   #  "НИПОНЯЛ РКСОК/1.0"
+               │       │   │                  └ 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+               │       │   └ <function formation_response at 0x7f09b5457820>
+               │       └ <function run at 0x7f09b91a3af0>
+               └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 33, in run
+    raise RuntimeError(
+
+RuntimeError: asyncio.run() cannot be called from a running event loop
+2021-10-20T16:28:35.414229+0200 INFO Serving on ('127.0.0.1', 8000)
+2021-10-20T16:28:43.555875+0200 INFO Received: 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+2021-10-20T16:28:43.556608+0200 ERROR An error has been caught in function '_run', process 'MainProcess' (22611), thread 'MainThread' (139841000728384):
+Traceback (most recent call last):
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 54, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x7f2f413e0dc0>
+    │       └ <function run at 0x7f2f4512aaf0>
+    └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x7f2f420c7cc0>
+           │    └ <function BaseEventLoop.run_until_complete at 0x7f2f421df430>
+           └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 629, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7f2f421df3a0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 596, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7f2f421e0ee0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 1890, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7f2f428d6ee0>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f2f4339b610>(<Future finished result=None>)>
+> File "/usr/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskWakeupMethWrapper object at 0x7f2f4339b610>(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskWakeupMethWrapper object at 0x7f2f4339b610>(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskWakeupMethWrapper object at 0x7f2f4339b610>(<Future finished result=None>)>
+
+  File "/home/ihor/PycharmProjects/curs_py/my_server/async_server2.py", line 25, in my_server
+    response = asyncio.run(formation_response(received_data))   #  "НИПОНЯЛ РКСОК/1.0"
+               │       │   │                  └ 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+               │       │   └ <function formation_response at 0x7f2f413e0790>
+               │       └ <function run at 0x7f2f4512aaf0>
+               └ <module 'asyncio' from '/usr/lib/python3.9/asyncio/__init__.py'>
+
+  File "/usr/lib/python3.9/asyncio/runners.py", line 33, in run
+    raise RuntimeError(
+
+RuntimeError: asyncio.run() cannot be called from a running event loop
+2021-10-20T16:38:04.262414+0200 INFO Serving on ('127.0.0.1', 8000)
+2021-10-20T16:38:13.407835+0200 INFO Received: 'ОТДОВАЙ ihor РКСОК/1.0\r\n\r\n'
+2021-10-20T16:38:14.084733+0200 INFO Sent: 'НОРМАЛДЫКС РКСОК/1.0\n111111\r\n\r\n'
